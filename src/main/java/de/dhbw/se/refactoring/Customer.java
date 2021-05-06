@@ -42,8 +42,8 @@ class Customer {
         double result = 0;
         Enumeration rentals = this.rentals.elements();
         while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
-            result += each.getCharge();
+            Rental rental = (Rental) rentals.nextElement();
+            result += rental.getCharge();
         }
         return result;
     }
@@ -62,9 +62,9 @@ class Customer {
         Enumeration rentals = this.rentals.elements();
         String result = "<H1>Rentals for <EM>" + this.getName() + "</EM></H1><P>\n";
         while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
+            Rental rental = (Rental) rentals.nextElement();
             //show figures for each rental          
-            result += each.getMovie().getTitle() + ": " + String.valueOf(each.getCharge()) + "<BR>\n";
+            result += rental.getMovie().getTitle() + ": " + String.valueOf(rental.getCharge()) + "<BR>\n";
         }
         //add footer lines      
         result += "<P>You owe <EM>" + String.valueOf(this.getTotalCharge()) + "</EM><P>\n";
