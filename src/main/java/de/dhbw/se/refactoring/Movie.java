@@ -1,9 +1,9 @@
 package de.dhbw.se.refactoring;
 
-import de.dhbw.se.refactoring.Prices.ChildrensPrice;
-import de.dhbw.se.refactoring.Prices.NewReleasePrice;
-import de.dhbw.se.refactoring.Prices.Price;
-import de.dhbw.se.refactoring.Prices.RegularPrice;
+import de.dhbw.se.refactoring.prices.ChildrensPrice;
+import de.dhbw.se.refactoring.prices.NewReleasePrice;
+import de.dhbw.se.refactoring.prices.Price;
+import de.dhbw.se.refactoring.prices.RegularPrice;
 
 public class Movie {
 
@@ -11,7 +11,7 @@ public class Movie {
     public static final int REGULAR = 0;
     public static final int NEW_RELEASE = 1;
     private String title;
-    Price price;
+    private Price price;
 
     public Movie(String newtitle, int newpriceCode) {
         this.title = newtitle;
@@ -46,7 +46,7 @@ public class Movie {
         return this.price.getCharge(daysRented);
     }
 
-    int getFrequentRenterPoints(int daysRented) {
+    public int getFrequentRenterPoints(int daysRented) {
         return this.price.getFrequentRenterPoints(daysRented);
     }
 }

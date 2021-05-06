@@ -1,4 +1,4 @@
-package de.dhbw.se.refactoring.Prices;
+package de.dhbw.se.refactoring.prices;
 
 import de.dhbw.se.refactoring.Movie;
 

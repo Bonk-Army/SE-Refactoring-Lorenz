@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 
 public class RentalTest {
 
-    final String MOVIETITEL = "Harry Potter";
-    final int PRICECODE = 1;
-    final int RENTINGDAYS = 14;
+    private final String MOVIETITEL = "Harry Potter";
+    private final int PRICECODE = 1;
+    private final int RENTINGDAYS = 14;
 
-    Movie testMovie;
-    Rental testRental;
+    private Movie testMovie;
+    private Rental testRental;
 
     @BeforeEach
     public void setUp() {

@@ -1,27 +1,28 @@
 package de.dhbw.se.refactoring;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CustomerTest {
 
-    final String CUSTOMERNAME = "LORENZ";
-    final String MOVIETITEL = "Harry Potter";
-    final int PRICECODE = 1;
-    final int RENTINGDAYS = 14;
-    final int RENTINGPOINTS = 2;
+    private final String CUSTOMERNAME = "LORENZ";
+    private final String MOVIETITEL = "Harry Potter";
+    private final int PRICECODE = 1;
+    private final int RENTINGDAYS = 14;
+    private final int RENTINGPOINTS = 2;
 
-    final String RESULTSTRING = "de.dhbw.se.refactoring.Rental Record for " + this.CUSTOMERNAME + "\n" + "\tTitle\t\tDays\tAmount\n" + "\t" + this.MOVIETITEL
-            + "\t\t" + this.RENTINGDAYS + "\t42.0\n" + "Amount owed is 42.0\n" + "You earned 2 frequent renter points";
+    private final String RESULTSTRING = "de.dhbw.se.refactoring.Rental Record for " + this.CUSTOMERNAME + "\n" + "\tTitle\t\tDays\tAmount\n" + "\t"
+            + this.MOVIETITEL + "\t\t" + this.RENTINGDAYS + "\t42.0\n" + "Amount owed is 42.0\n" + "You earned 2 frequent renter points";
 
-    final String RESULTSTRINGHTML = "<H1>Rentals for <EM>" + this.CUSTOMERNAME + "</EM></H1><P>\n" + "" + this.MOVIETITEL + ": 42.0<BR>\n"
+    private final String RESULTSTRINGHTML = "<H1>Rentals for <EM>" + this.CUSTOMERNAME + "</EM></H1><P>\n" + "" + this.MOVIETITEL + ": 42.0<BR>\n"
             + "<P>You owe <EM>42.0</EM><P>\n" + "On this rental you earned <EM>" + this.RENTINGPOINTS + "</EM> frequent renter points<P>";
 
-    Movie testMovie;
-    Rental testRental;
-    Customer testCustomer;
+    private Movie testMovie;
+    private Rental testRental;
+    private Customer testCustomer;
 
     @BeforeEach
     public void setUp() {
@@ -32,7 +33,11 @@ public class CustomerTest {
 
     @Test
     public void addRental() {
-        this.testCustomer.addRental(this.testRental);
+        try {
+            this.testCustomer.addRental(this.testRental);
+        } catch (Exception e) {
+            fail();
+        }
     }
 
     @Test
